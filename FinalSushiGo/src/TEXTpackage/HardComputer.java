@@ -34,7 +34,7 @@ public class HardComputer extends Player {
 	 * uses switch and if statements to choose cards based on the cards in all of the hands, and its own hand
 	 * uses basic strategy for choosin cards with highest pay off early on
 	 * and chooses cards only with a high likely hood of guaranteeing points
-	 * @param   the value of turn affects which switch statement will be used. Depending 
+	 * @param turn  the value of turn affects which switch statement will be used. Depending
 	 * how far in the game it is, different moves are selected 
 	 */
 	public void move(int turn) {
