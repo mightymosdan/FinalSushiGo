@@ -38,6 +38,9 @@ public class AI extends Player {
         setBoard();
         AIMove smartMove = new AIMove(allCards, myHand, myBoard,numPlayers);
         String AIchoice = smartMove.chooseCard();
+        super.setCardPlayed(AIchoice);
+        super.updateBoard();
+        System.out.println(this.toString() + " chooses: " + AIchoice);
     }
 
     /**
