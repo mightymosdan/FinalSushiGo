@@ -38,16 +38,10 @@ public class GameConfiguration {
 		else if(mode == 2) {
 			players[0] = new Human();
 			for(int count = 1; count < numPlayers; count++) {
-				players[count] = new EasyComputer(count - 1);
+				players[count] = new AI(count - 1);
 			}
 		}
-		
-		else if(mode == 3) {
-			players[0] = new Human();
-			for(int count = 1; count < numPlayers; count++) {
-				players[count] = new HardComputer(count - 1, hands);
-			}
-		}
+
 	}
 	
 	/**
