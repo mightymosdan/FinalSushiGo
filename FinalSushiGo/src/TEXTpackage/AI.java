@@ -32,4 +32,34 @@ public class AI extends Player {
     public void move(int turn) {
 
     }
+
+    /**
+     * This method takes all the hands that are currently in play and
+     * stores all the possible cards into a hashtable that the AI can
+     * access and view.
+     */
+    private void accessAllCards() {
+        setAllCards();
+
+        for(int handNum = 0; handNum < hands.length; handNum++) {
+            for(int card = 0; card < hands[handNum].size(); card++) {
+
+                if(allCards.containsKey(hands[handNum].get(card))) {
+                    allCards.replace(hands[handNum].get(card),
+                            (allCards.get(hands[handNum].get(card)) + 1));
+                }
+                else {
+                    allCards.put(hands[handNum].get(card), 1);
+                }
+            }
+        }
+    }
+
+    /**
+     * Setter to change private variable into an empty Hashtable to hold all cards
+     * and their quantity during the game
+     */
+    private void setAllCards(){
+        this.allCards = new Hashtable<String, Integer>();
+    }
 }

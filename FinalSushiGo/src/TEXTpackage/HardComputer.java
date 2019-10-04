@@ -39,6 +39,7 @@ public class HardComputer extends Player {
 	 */
 	public void move(int turn) {
 		updateHands();
+		// Do I need getPossibleMoves() if I am going to use AIMove?
 		LinkedList<String> currentHand = super.getPossibleMoves();
 		String card = "";
 		randNum = new Random();
@@ -326,24 +327,5 @@ public class HardComputer extends Player {
 			
 	}
 	
-	/**
-	 * update hands takes no parameters and returns nothing
-	 * used to update the hashtable contains all of the hands being used
-	 * so that the computer can continuously choose the best options
-	 */
-	private void updateHands() {
-		this.allCards = new Hashtable<String, Integer>();
-		for(int handNum = 0; handNum < hands.length; handNum++) {
-			for(int card = 0; card < hands[handNum].size(); card++) {
-				
-				if(allCards.containsKey(hands[handNum].get(card))) {
-					allCards.replace(hands[handNum].get(card), 
-							(allCards.get(hands[handNum].get(card)) + 1));
-				}
-				else {
-					allCards.put(hands[handNum].get(card), 1);
-				}
-			}
-		}
-	}
+
 }

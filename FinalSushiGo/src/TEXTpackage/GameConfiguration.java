@@ -58,7 +58,7 @@ public class GameConfiguration {
 	*The displayHand method displays the hand to the player
 	*@param player 	is the player object, which determines
 	*		the player's name
-	*@param hand	is the hand that is currently assigned to 
+	*@param handNum	is the hand that is currently assigned to
 	*		the player
 	*/
 	
@@ -110,11 +110,7 @@ public class GameConfiguration {
 	 * play method iterates for how ever many cards are in each hand for each player (2-4)
 	 * after the player chooses a move, hands and boards are updated and displayed. 
 	 * after each round, the hands alternate by one. 
-	 * 
-	 * @param numPlayers   the number of players in the game to determine how many 
-	 * 			times to alternate hands and which players get which hands
-	 * @param game       the gameConfiguration object which contains all of the methods 
-	 * 					to play the game
+	 *
 	 * 
 	 * uses while loop to iterate through players turns while the gameEnd variable is false
 	 * checks length of hand each iteration, when the length in every hand is 0, breaks from loop
