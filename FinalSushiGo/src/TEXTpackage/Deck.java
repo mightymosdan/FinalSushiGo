@@ -23,44 +23,32 @@ public class Deck {
 	
 	public Deck() {
 		deckOfCards = new LinkedList<String>();
-		randCard = new Random();
-		
-		for(int cardNumber = 0; cardNumber < 14; cardNumber++) {
-			deckOfCards.add("Dumpling");
-		}
-		
+
 		for(int cardNumber = 0; cardNumber < 5; cardNumber++) {
 			deckOfCards.add("EggNigiri");
+			deckOfCards.add("SquidNigiri");
+		}
+
+		for(int cardNumber = 0; cardNumber < 6; cardNumber++) {
+			deckOfCards.add("Wasabi");
 		}
 		
 		for(int cardNumber = 0; cardNumber < 10; cardNumber++) {
 			deckOfCards.add("SalmonNigiri");
+			deckOfCards.add("Pudding");
 		}
-		
-		for(int cardNumber = 0; cardNumber < 5; cardNumber++) {
-			deckOfCards.add("SquidNigiri");
+
+		for(int cardNumber = 0; cardNumber < 14; cardNumber++) {
+			deckOfCards.add("Sashimi");
+			deckOfCards.add("Dumpling");
+			deckOfCards.add("Tempura");
 		}
-		
+
 		for(int cardNumber = 0; cardNumber < 26; cardNumber++) {
 			deckOfCards.add("MakiRoll");
 		}
-		
-		for(int cardNumber = 0; cardNumber < 14; cardNumber++) {
-			deckOfCards.add("Sashimi");
-		}
-		
-		for(int cardNumber = 0; cardNumber < 14; cardNumber++) {
-			deckOfCards.add("Tempura");
-		}
-		
-		for(int cardNumber = 0; cardNumber < 6; cardNumber++) {
-			deckOfCards.add("Wasabi");
-		}
-			
-		for(int cardNumber = 0; cardNumber < 10; cardNumber++) {
-			deckOfCards.add("Pudding");
-		}
 	}
+
 	
 	/**
 	*setHand method used to create a hand from the deck
@@ -72,6 +60,7 @@ public class Deck {
 	
 	@SuppressWarnings("unchecked")
 	public LinkedList<String>[] setHand(int numHands){
+		randCard = new Random();
 		hands = new LinkedList[numHands];
 		for(int handNum = 0; handNum < numHands; handNum++) {
 			LinkedList<String> hand = new LinkedList<String>();
