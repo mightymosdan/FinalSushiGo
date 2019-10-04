@@ -38,7 +38,6 @@ public class HardComputer extends Player {
 	 * how far in the game it is, different moves are selected 
 	 */
 	public void move(int turn) {
-		updateHands();
 		// Do I need getPossibleMoves() if I am going to use AIMove?
 		LinkedList<String> currentHand = super.getPossibleMoves();
 		String card = "";

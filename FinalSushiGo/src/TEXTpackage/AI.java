@@ -7,7 +7,10 @@ public class AI extends Player {
     private LinkedList<String>[] hands;
     private int numPlayers;
     private Random randNum;
+    private LinkedList<String> myHand;
+    private Hashtable<String, Integer> myBoard;
     public static final String PLAYER_NAME = "Computer ";
+
 
     /**
      * constructor AI
@@ -30,7 +33,11 @@ public class AI extends Player {
 
 
     public void move(int turn) {
-
+        accessAllCards();
+        setMyHand();
+        setBoard();
+        AIMove smartMove = new AIMove(allCards, myHand, myBoard,numPlayers);
+        String AIchoice = smartMove.chooseCard();
     }
 
     /**
@@ -62,4 +69,13 @@ public class AI extends Player {
     private void setAllCards(){
         this.allCards = new Hashtable<String, Integer>();
     }
+
+    private void setMyHand(){
+        this.myHand = super.getPossibleMoves();
+    }
+
+    private void setBoard(){
+        this.myBoard = super.getBoard();
+    }
+
 }
