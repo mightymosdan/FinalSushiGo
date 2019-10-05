@@ -22,7 +22,7 @@ public class FinalScore {
 	/**
 	*The FinalScore constructor takes the players boards and creates an array of hashtables
 	*calls calcScore method for each player
-	*@param game	This is the game object that is created from the GameConfiguration class
+	*@param playerArray	This is the game object that is created from the GameConfiguration class
 	*		This parameter is used to refer to the players and their boards and to be able to 
 	*		compare the current player's board against their opponent to calculate
 	*		special card scores that rely on comparing boards
@@ -62,29 +62,30 @@ public class FinalScore {
 	*The method dumplingScore sets the specific conditions for dumpling card combinations  
 	*that are necessary for the specific card on the board to accrue points
 	*calls method player.updateScore(score) to update the player object's score based on the number of points
-	*@param player    the player object for which the score is calculated
+	*@param playerBoard    the player object for which the score is calculated
 	*/
 	
 	private void dumplingScore(Hashtable<String, Integer> playerBoard) {
-		switch(playerBoard.getOrDefault("Dumpling", 0)) {
-		case 0:
+		int dumplings;
+		dumplings = playerBoard.getOrDefault("Dumpling", 0);
+
+		if(dumplings == 0){
 			score += 0;
-			break;
-		case 1:
-			score += 1;
-			break;
-		case 2:
-			score += 3;
-			break;
-		case 3:
-			score += 6;
-			break;
-		case 4:
-			score += 10;
-			break;
-		default:
-			score += 15;
-			break;
+		}
+		else if(dumplings == 1){
+			score ++;
+		}
+		else if(dumplings == 2){
+			score = score + 3;
+		}
+		else if(dumplings == 3){
+			score = score +6;
+		}
+		else if(dumplings == 4){
+			score = score + 10;
+		}
+		else if(dumplings >= 5){
+			score = score + 15;
 		}
 	}
 	
@@ -93,7 +94,7 @@ public class FinalScore {
 	*that are necessary for the specific card on the board to accrue points
 	*compares the player's board to all of the boards in the Array boards. 
 	*calls method player.updateScore(score) to update the player object's score based on the number of points
-	*@param player    the player object for which the score is calculated
+	*@param playerBoard    the player object for which the score is calculated
 	*/
 	
 	private void puddingScore(Hashtable<String, Integer> playerBoard, int playerNum) {
