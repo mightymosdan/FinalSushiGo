@@ -31,19 +31,22 @@ public class Start {
                 System.out.printf("\"%s\" is not a valid number.\n", input);
             }
             selection = user_input.nextInt();
-        } while (selection == 1 || selection == 2);
-        
-        do {
-            System.out.print("Enter the number of players between 2-4: ");
-            while (!user_input.hasNextInt()) {
-                String input = user_input.next();
-                System.out.printf("\"%s\" is not a valid number.\n", input);
+
+            if(selection == 1 || selection == 2) {
+                do {
+                    System.out.print("Enter the number of players between 2-4: ");
+                    while (!user_input.hasNextInt()) {
+                        String input = user_input.next();
+                        System.out.printf("\"%s\" is not a valid number.\n", input);
+                    }
+                    players = user_input.nextInt();
+                }
+                while (players < 2 || players > 4);
+
+
+                game = new GameConfiguration(selection, players);
+                game.play();
             }
-            players = user_input.nextInt();
-        } while (players < 2 || players > 4 );
-        
-		
-        game = new GameConfiguration(selection, players);
-        game.play();
-	}
+            else{}
+        ]
 }

@@ -70,7 +70,7 @@ public class FinalScore {
 		dumplings = playerBoard.getOrDefault("Dumpling", 0);
 
 		if(dumplings == 0){
-			score += 0;
+			score = 0;
 		}
 		else if(dumplings == 1){
 			score ++;
@@ -140,7 +140,7 @@ public class FinalScore {
 	*/
 	
 	private void makiRollScore(Hashtable<String, Integer> playerBoard, int playerNum) {
-		boolean mostMaki = true;
+		boolean mostMaki = false;
 		for(int num = 0; num < boards.length; num++) {
 			if(playerNum != num) {
 				if(playerBoard.getOrDefault("MakiRoll", 0) > boards[num].getOrDefault("MakiRoll", 0))
