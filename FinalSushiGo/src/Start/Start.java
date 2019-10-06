@@ -22,7 +22,7 @@ public class Start {
 		System.out.println("Sushi GO!");
 		System.out.println("1) Player vs Player");
 		System.out.println("2) Player vs AI");
-		System.out.println("3) Rules");
+
 		
         do {
             System.out.print("Please Choose One of the Options: ");
@@ -31,7 +31,7 @@ public class Start {
                 System.out.printf("\"%s\" is not a valid number.\n", input);
             }
             selection = user_input.nextInt();
-        } while (selection < 1 || selection > 3);
+        } while (selection == 1 || selection == 2);
         
         do {
             System.out.print("Enter the number of players between 2-4: ");
