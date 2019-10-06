@@ -73,6 +73,10 @@ public class AI extends Player {
         this.allCards = new Hashtable<String, Integer>();
     }
 
+    public Hashtable<String, Integer> getAllCards(){
+        return this.allCards;
+    }
+
     private void setMyHand(){
         this.myHand = super.getPossibleMoves();
     }
