@@ -122,7 +122,8 @@ public abstract class Player {
 		this.board = newBoard;
 	}
 	
-	
+
+
 	/**
 	 * assigns value to the player's card variable
 	 * @param card   string value to be assigned
